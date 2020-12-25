@@ -1,5 +1,6 @@
 package com.example.esieaandroid4a.presentation.main
 
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -8,22 +9,31 @@ import com.example.esieaandroid4a.domain.usecase.CreateUserUseCase
 import com.example.esieaandroid4a.domain.usecase.GetUserUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
-class MainViewModel(
-    private val createUserUseCase: CreateUserUseCase,
+class MainViewModel (
     private val getUserUseCase: GetUserUseCase
 ) : ViewModel(){
 
-    val counter : MutableLiveData<Int> = MutableLiveData()
+    val loginLiveData : MutableLiveData<LoginStatus> = MutableLiveData()
 
-    init{
-        counter.value = 0
+    fun onClickedLogin(emailUser: String, password: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            val user = getUserUseCase.invoke(emailUser)
+            val loginStatus = if(user != null && user.password == password){
+                LoginSuccess(user.email, user.password, user)
+            }else{
+                LoginError
+            }
+
+            withContext(Dispatchers.Main){
+                loginLiveData.value = loginStatus
+            }
+        }
     }
 
-    fun onClickedIncrement() {
-        viewModelScope.launch(Dispatchers.IO) {
-            createUserUseCase.invoke(User("test"))
-            val user = getUserUseCase.invoke("test")
-        }
+    fun onClickedCreateAccount(emailUser: String, password: String, fragmentManager: FragmentManager) {
+        val createAccount = CreateAccount(emailUser, password)
+        createAccount.show(fragmentManager, "activity_dialog")
     }
 }
