@@ -1,6 +1,5 @@
-package com.example.esieaandroid4a.presentation.main
+package com.example.esieaandroid4a.presentation.creationAccount
 
-import android.content.DialogInterface
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,17 +8,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.FragmentManager
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.example.esieaandroid4a.R
-import com.example.esieaandroid4a.data.repository.UserRepository
 import com.example.esieaandroid4a.domain.entity.User
-import com.example.esieaandroid4a.domain.usecase.CreateUserUseCase
 import com.google.android.material.textfield.TextInputEditText
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import org.koin.android.ext.android.inject
 
 

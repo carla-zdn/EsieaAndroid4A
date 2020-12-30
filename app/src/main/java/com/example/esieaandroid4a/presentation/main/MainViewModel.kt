@@ -4,9 +4,8 @@ import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.esieaandroid4a.domain.entity.User
-import com.example.esieaandroid4a.domain.usecase.CreateUserUseCase
 import com.example.esieaandroid4a.domain.usecase.GetUserUseCase
+import com.example.esieaandroid4a.presentation.creationAccount.CreateAccount
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

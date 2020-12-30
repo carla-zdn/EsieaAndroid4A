@@ -7,12 +7,11 @@ import com.example.esieaandroid4a.data.local.DatabaseDao
 import com.example.esieaandroid4a.data.repository.UserRepository
 import com.example.esieaandroid4a.domain.usecase.CreateUserUseCase
 import com.example.esieaandroid4a.domain.usecase.GetUserUseCase
-import com.example.esieaandroid4a.presentation.main.CreateAccountViewModel
+import com.example.esieaandroid4a.presentation.creationAccount.CreateAccountViewModel
 import com.example.esieaandroid4a.presentation.main.MainViewModel
-import com.example.esieaandroid4a.presentation.main.SecondViewModel
+import com.example.esieaandroid4a.presentation.recyclerView.SecondViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
-import java.security.AccessControlContext
 
 val presentationModule = module {
     factory { MainViewModel(get()) }

@@ -1,4 +1,4 @@
-package com.example.esieaandroid4a.presentation.main
+package com.example.esieaandroid4a.presentation.creationAccount
 
 sealed class AccountStatus
 
