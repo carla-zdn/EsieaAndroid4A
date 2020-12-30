@@ -29,7 +29,7 @@ Cette application à pour but de trouver les évènements musicaux qui vont se p
 - Après s'être connecté l'utilisateur se retrouve ici et peut voire les différent evenements qui se déroule à Paris dans les prochain jours
 - Cela est un affichage de l'api SongKick.com
 
-<img src="readmeImage/Liste-Evenement.png" width= 300>
+<img src="readmeImage/Liste-Evenements.png" width= 300>
 
 ## Aspect utilisé :
 
